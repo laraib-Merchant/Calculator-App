@@ -1,6 +1,6 @@
 :root {
-  --primary: #d81e5b;
-  --secondary:  #8c38ff;
+  --primary: #8c38ff;
+  --secondary: #d81e5b;
   --dark: #131a26;
   --light: #eee;
 }
@@ -81,4 +81,8 @@ button:hover {
   flex: 1 1 33.333%;
   max-width: 33.333%;
   background-color: var(--dark);
+}
+
+.digits button:hover {
+  background-color: var(--primary);
 }
