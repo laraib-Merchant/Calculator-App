@@ -4,7 +4,7 @@ function App() {
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("");
 
-  const ops = ['/','*','+','-','.'];
+  const ops = ['/','*','+','-','.','%'];
   
   const updateCalc = value => {
     if(ops.includes(value) && calc === '' || ops.includes(value) && ops.includes(calc.slice(-1))) {
@@ -42,6 +42,11 @@ function App() {
     setResult(value2);
   }
 
+  const resetValue = () => {
+    setCalc("");
+    setResult("");
+  }
+
 
   return (
     <div className="App">
@@ -55,7 +60,9 @@ function App() {
               <button onClick={() => updateCalc('*')}>*</button>
               <button onClick={() => updateCalc('+')}>+</button>
               <button onClick={() => updateCalc('-')}>-</button>
-
+              <button onClick={() => updateCalc('%')}>%</button>
+              
+              <button onClick={resetValue}>AC</button>
               <button onClick={delLast}>DEL</button>
             </div>
             <div className="digits">
